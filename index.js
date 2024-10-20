@@ -36,17 +36,7 @@ app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 // client.connect();
 
 app.get("/", async (req, res) => {
-  try {
-    // Query to select all data from the table
-    const query = "SELECT * FROM pj_customers;";
-    const result = await client.query(query);
-
-    // Send the result rows as JSON
-    res.status(200).json(result.rows.length);
-  } catch (err) {
-    console.error("Error executing query", err.stack);
-    res.status(500).json({ error: "Internal Server Error" });
-  }
+  res.status(200).json("Welcome, your app is working well");
 });
 
 // Start the server
