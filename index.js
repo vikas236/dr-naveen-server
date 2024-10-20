@@ -26,14 +26,14 @@ app.use(bodyParser.json({ limit: "10mb" }));
 app.use(bodyParser.urlencoded({ limit: "10mb", extended: true }));
 
 // PostgreSQL client configuration from environment variables
-const client = new Client({
-  connectionString: process.env.POSTGRES_URL,
-  ssl: {
-    rejectUnauthorized: false,
-  },
-});
+// const client = new Client({
+//   connectionString: process.env.POSTGRES_URL,
+//   ssl: {
+//     rejectUnauthorized: false,
+//   },
+// });
 
-client.connect();
+// client.connect();
 
 app.get("/", async (req, res) => {
   try {
